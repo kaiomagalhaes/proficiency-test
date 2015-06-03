@@ -63,6 +63,7 @@ group :test do
   gem 'factory_girl_rails', '~> 4.4.1'
   gem 'forgery', '~> 0.6.0'
   gem 'fakeweb', '~> 1.3.0'
+  gem "codeclimate-test-reporter"
 end
 
 group :production do
