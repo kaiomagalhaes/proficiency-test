@@ -6,4 +6,6 @@ class Student < ActiveRecord::Base
   before_validation(:on => :create) do
     self.status ||= 0
   end
+
+  has_many :courses, through: :classrooms
 end
