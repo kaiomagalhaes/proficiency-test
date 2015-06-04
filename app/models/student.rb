@@ -6,5 +6,4 @@ class Student < ActiveRecord::Base
   before_validation(:on => :create) do
     self.status ||= 0
   end
-
 end
