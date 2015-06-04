@@ -28,6 +28,11 @@ gem 'haml', '~> 4.0.4'
 gem 'enumerate_it', '~> 1.2.0'
 gem 'pg', '~> 0.17.1'
 
+
+# Bootstrap
+gem 'bootstrap-sass'
+gem 'bootstrap_form'
+
 group :doc do
   gem 'sdoc', require: false
 end
