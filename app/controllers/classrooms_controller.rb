@@ -14,9 +14,6 @@ class ClassroomsController < ApplicationController
     @classroom = Classroom.new
   end
 
-  def edit
-  end
-
   def create
     @classroom = Classroom.new(classroom_params)
 
@@ -26,18 +23,6 @@ class ClassroomsController < ApplicationController
         format.json { render action: 'show', status: :created, location: @classroom }
       else
         format.html { render action: 'new' }
-        format.json { render json: @classroom.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def update
-    respond_to do |format|
-      if @classroom.update(classroom_params)
-        format.html { redirect_to @classroom, notice: 'Classroom was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
         format.json { render json: @classroom.errors, status: :unprocessable_entity }
       end
     end

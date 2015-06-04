@@ -1,4 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<div class="col-md-1"></div>
+<div class="container">
+  <div class="col-md-10" id="show-model-container">
+    <p id="notice" class="alert-success"><%= notice %></p>
+    <h1>Student</h1>
+    <p>Name: <%= @student.name %></p>
+    <p>Register number: <%= @student.register_number %></p>
+    <%= link_to 'Back', students_path, class: "btn btn-info pull-right" %>
+  </div>
+</div>
+<div class="col-md-1"></div>
