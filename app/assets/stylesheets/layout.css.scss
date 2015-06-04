@@ -1,28 +1,27 @@
 $primary-color: rgb(230, 252, 242);
 
 /*body*/
-body{
-	background: #F2F2F2 !important;
+body {
+  background: #F2F2F2 !important;
 }
 
-
 /*header*/
-#header nav.navbar.navbar-default{
-	background: #40403E;
+#header nav.navbar.navbar-default {
+  background: #40403E;
 }
 
 #header button.btn {
-	background: #40403E;
-	color: #D9CEBA;
+  background: #40403E;
+  color: #D9CEBA;
 }
 
-#header nav.navbar.navbar-default ul li.active a{
-	background: #40403E;
-	color:#555;
+#header nav.navbar.navbar-default ul li.active a {
+  background: #40403E;
+  color: #555;
 }
 
 #header nav.navbar.navbar-default ul li a {
-	color: #D9CEBA;
+  color: #D9CEBA;
 }
 
 /*Footer*/
@@ -38,7 +37,6 @@ body {
   min-height: 100%;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
-
 
 #footer {
   position: absolute;

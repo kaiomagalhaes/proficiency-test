@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="col-md-1"></div>
   <div id="table-responsive" class="col-md-10">
@@ -8,7 +7,8 @@
       <tr>
         <th>Student</th>
         <th>Course</th>
-        <th colspan="2"></th>
+        <th>Entry at</th>
+        <th colspan="3"></th>
       </tr>
       </thead>
 
@@ -16,7 +16,8 @@
       <% @classrooms.each do |classroom| %>
           <tr>
             <td><%= classroom.student.name %></td>
-            <td><%= classroom.course.description %></td>
+            <td><%= classroom.course.name %></td>
+            <td><%= classroom.entry_at.strftime('%A, %d %B %Y %H:%M:%S') %></td>
             <td><%= link_to 'Show', classroom %></td>
             <td><%= link_to 'Destroy', classroom, method: :delete, data: {confirm: 'Are you sure?'} %></td>
           </tr>

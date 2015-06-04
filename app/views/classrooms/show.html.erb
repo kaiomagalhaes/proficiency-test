@@ -1,4 +1,15 @@
 <p id="notice"><%= notice %></p>
+<div class="col-md-1"></div>
+<div class="container">
+  <div class="col-md-10" id="show-classroom-container">
+    This classroom was created on <%= @classroom.entry_at.strftime('%A, %d %B %Y %H:%M:%S') %>
+    <p>Student: <%= @classroom.student.name %></p>
 
-<%= link_to 'Edit', edit_classroom_path(@classroom) %> |
-<%= link_to 'Back', classrooms_path %>
+    <p>Course: <%= @classroom.course.name %></p>
+    <%= link_to 'Back', classrooms_path, class: "btn btn-info pull-right" %>
+  </div>
+</div>
+<div class="col-md-1"></div>
+
+
+
