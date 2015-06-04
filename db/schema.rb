@@ -11,12 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150604000012) do
+ActiveRecord::Schema.define(version: 20150604004407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
   enable_extension "uuid-ossp"
+
+  create_table "classrooms", force: true do |t|
+    t.integer  "student_id"
+    t.integer  "course_id"
+    t.datetime "entry_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "classrooms", ["course_id"], name: "index_classrooms_on_course_id", using: :btree
+  add_index "classrooms", ["student_id"], name: "index_classrooms_on_student_id", using: :btree
 
   create_table "courses", force: true do |t|
     t.string   "name",        limit: 45
