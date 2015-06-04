@@ -1,7 +1,7 @@
 <%= bootstrap_form_for(@course) do |f| %>
     <div class="col-md-12">
-      <%= f.text_field :name, 'ng-model':"course_name", 'mask':'%','mask-repeat':'45' %>
-      <%= f.text_field :description, 'ng-model':"course_description", 'mask':'%','mask-repeat':'45'%>
+      <%= f.text_field :name, 'ng-model' => "course_name", 'mask' => '%', 'mask-repeat' => '45' %>
+      <%= f.text_field :description, 'ng-model' => "course_description", 'mask' => '%', 'mask-repeat' => '45' %>
       <div class="col-md-4 pull-right">
         <div class="pull-right">
           <%= link_to 'Back', courses_path, class: "btn btn-info" %>
