@@ -3,5 +3,5 @@ languages:
   Ruby: true
   JavaScript: true
 exclude_paths:
-"spec/controllers/*"
-"app/controllers/*"
+- spec/controllers/**
+- app/controllers/**
