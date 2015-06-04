@@ -30,7 +30,7 @@ RSpec.describe Course, :type => :model do
       expect(build(:course_without_name)).to be_invalid
     end
 
-    it 'When register_number is not defined' do
+    it 'When description is not defined' do
       expect(build(:course_without_description)).to be_invalid
     end
 
@@ -41,7 +41,7 @@ RSpec.describe Course, :type => :model do
       expect(course).to be_invalid
     end
 
-    it 'When register_number lenght is more than 45' do
+    it 'When description lenght is more than 45' do
       description_size_51 = 'Hi! I am a great description! Yeah! I am too long!'
       course.description = description_size_51
       expect(course).to be_invalid
@@ -51,11 +51,6 @@ RSpec.describe Course, :type => :model do
       name_size_53 = 'Hi! I am a great name! Yeah! I am too long for this!'
       course.name = name_size_53
       expect(course).to be_invalid
-    end
-
-    it 'When already have a course with the same registration number' do
-      course.save
-      expect(build(:course)).to be_invalid
     end
   end
 end
