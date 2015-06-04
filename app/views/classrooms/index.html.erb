@@ -1,23 +1,26 @@
-<h1>Listing classrooms</h1>
+<h3>Listing classrooms</h3>
 
-<table>
-  <thead>
+<div id="table-responsive" class="col-md-8">
+  <table class="table table-striped table-bordered">
+    <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Student</th>
+      <th>Course</th>
+      <th colspan="2"></th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
+    <tbody>
     <% @classrooms.each do |classroom| %>
-      <tr>
-        <td><%= link_to 'Show', classroom %></td>
-        <td><%= link_to 'Edit', edit_classroom_path(classroom) %></td>
-        <td><%= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <tr>
+          <td><%=  classroom.student.name %></td>
+          <td><%=  classroom.course.description %></td>
+          <td><%= link_to 'Show', classroom %></td>
+          <td><%= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
     <% end %>
-  </tbody>
-</table>
-
+    </tbody>
+  </table>
+  <%= link_to 'New', new_classroom_path ,class: "btn btn-info col-md-6 pull-right" %>
+</div>
 <br>
-
-<%= link_to 'New Classroom', new_classroom_path %>
