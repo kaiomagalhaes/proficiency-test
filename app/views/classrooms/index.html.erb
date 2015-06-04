@@ -14,7 +14,7 @@
     <% @classrooms.each do |classroom| %>
         <tr>
           <td><%=  classroom.student.name %></td>
-          <td><%=  classroom.course.description %></td>
+          <td><%=  classroom.course.name %></td>
           <td><%= link_to 'Show', classroom %></td>
           <td><%= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
