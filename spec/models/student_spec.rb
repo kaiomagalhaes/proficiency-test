@@ -49,8 +49,8 @@ RSpec.describe Student, :type => :model do
     end
 
     it 'is invalid when name lenght is more than 45' do
-      name_size_46 = '1111111111111111111111111111111111111111111111'
-      student.name = name_size_46
+      name_size_53 = 'Hi! I am a great name! Yeah! I am too long for this!'
+      student.name = name_size_53
       expect(student).to be_invalid
     end
 
