@@ -1,6 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<%= render 'form' %>
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<div class="col-md-1"></div>
+<div class="container">
+  <div class="col-md-10" id="show-model-container">
+    <p id="notice" class="alert-success"><%= notice %></p>
+    <h1>Course</h1>
+    <p>Name: <%= @course.name %></p>
+    <p>Description: <%= @course.description %></p>
+    <%= link_to 'Back', courses_path, class: "btn btn-info pull-right" %>
+  </div>
+</div>
+<div class="col-md-1"></div>
