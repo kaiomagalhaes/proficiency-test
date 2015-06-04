@@ -56,7 +56,7 @@ RSpec.describe Student, :type => :model do
 
     it 'When already have a student with the same registration number' do
       student.save
-      expect(build(:student)).to be_invalid
+      expect(Student.new(student.attributes)).to be_invalid
     end
 
   end
