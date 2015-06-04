@@ -1,27 +1,29 @@
-<h3>Listing Students</h3>
-
-<div id="table-responsive" class="col-md-8">
-  <table class="table table-striped table-bordered">
-    <thead>
-    <tr>
-      <th>Name</th>
-      <th>Register number</th>
-      <th colspan="3"></th>
-    </tr>
-    </thead>
-
-    <tbody>
-    <% @students.each do |student| %>
-        <tr>
-          <td><%=  student.name %></td>
-          <td><%=  student.register_number %></td>
-          <td><%= link_to 'Show', student %></td>
-          <td><%= link_to 'Edit', edit_student_path(student) %></td>
-          <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-    <% end %>
-    </tbody>
-  </table>
-  <%= link_to 'New', new_student_path ,class: "btn btn-info col-md-6 pull-right" %>
+<div class="container">
+  <div class="col-md-1"></div>
+  <div id="table-responsive" class="col-md-10">
+    <h3>Listing students</h3>
+    <table class="table table-striped table-bordered">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Register number</th>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @students.each do |student| %>
+          <tr>
+            <td><%= student.name %></td>
+            <td><%= student.register_number %></td>
+            <td><%= link_to 'Show', student %></td>
+            <td><%= link_to 'edit', student %></td>
+            <td><%= link_to 'Destroy', student, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'New', new_student_path, class: "btn btn-info col-md-12 pull-right" %>
+  </div>
+  <div class="col-md-1"></div>
+  <br/>
 </div>
-<br>
