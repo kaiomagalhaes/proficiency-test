@@ -60,4 +60,19 @@ RSpec.describe Student, :type => :model do
     end
 
   end
+
+  describe 'Is valid destroy student' do
+    it 'When is not associated with a Classroom' do
+      student.save
+      expect { student.destroy }.to change(Student, :count).by(-1)
+    end
+  end
+
+  describe 'Is invalid destroy student' do
+    it 'When already associated with a Classroom' do
+      student.save
+      create(:classroom, student: student, course: create(:course))
+      expect { student.destroy }.to change(Student, :count).by(0)
+    end
+  end
 end

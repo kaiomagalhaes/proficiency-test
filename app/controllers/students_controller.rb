@@ -44,18 +44,18 @@ class StudentsController < ApplicationController
   def destroy
     @student.destroy
     respond_to do |format|
-      format.html { redirect_to students_url }
+      format.html { redirect_to students_url, notice: @student.errors[:student].first }
       format.json { head :no_content }
     end
   end
 
   private
-  
+
   def set_student
     @student = Student.find(params[:id])
   end
 
-  
+
   def student_params
     params.require(:student).permit(:name, :register_number)
   end

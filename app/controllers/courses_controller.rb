@@ -44,17 +44,17 @@ class CoursesController < ApplicationController
   def destroy
     @course.destroy
     respond_to do |format|
-      format.html { redirect_to courses_url }
+      format.html { redirect_to courses_url, notice: @course.errors[:course].first }
       format.json { head :no_content }
     end
   end
 
   private
-    def set_course
-      @course = Course.find(params[:id])
-    end
+  def set_course
+    @course = Course.find(params[:id])
+  end
 
-    def course_params
-      params.require(:course).permit(:name, :description)
-    end
+  def course_params
+    params.require(:course).permit(:name, :description)
+  end
 end
