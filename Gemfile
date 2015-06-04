@@ -54,6 +54,9 @@ group :development, :test do
 
   gem 'awesome_print'
   gem 'pry-rails'
+
+  gem "seedbank"
+  gem "ffaker"
 end
 
 group :test do
