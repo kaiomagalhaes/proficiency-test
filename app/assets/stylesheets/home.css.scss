@@ -1,0 +1,54 @@
+$primary-color: rgb(230, 252, 242);
+
+/*body*/
+body{
+	background: #F2F2F2 !important;
+}
+
+
+/*header*/
+#header nav.navbar.navbar-default{
+	background: #40403E;
+}
+
+#header button.btn {
+	background: #40403E;
+	color: #D9CEBA;
+}
+
+#header nav.navbar.navbar-default ul li.active a{
+	background: #40403E;
+	color:#555;
+}
+
+#header nav.navbar.navbar-default ul li a {
+	color: #D9CEBA;
+}
+
+/*Footer*/
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 4rem;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+
+#footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+
+  height: 50px;
+  background: #262625;
+  color: #D9CEBA;
+  padding-top: 15px
+}
