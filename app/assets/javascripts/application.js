@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require angular
+//= require angular/proeficiency-test
+//= require ng-mask
 //= require_tree .
