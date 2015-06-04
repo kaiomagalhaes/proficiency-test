@@ -1,9 +1,12 @@
 <%= bootstrap_form_for(@classroom) do |f| %>
     <div class="col-md-12">
-      <%= f.collection_select :student, Student.all, :id, :name, class: "form-control", prompt: "Select a student" %>
-      <%= f.collection_select :course, Course.all, :id, :name, class: "form-control", prompt: "Select a course" %>
-    </div>
-    <div class="col-md-1">
-      <%= f.submit "Save", class: "btn btn-info" %>
+      <%= f.collection_select :student, Student.all, :id, :name, prompt: "Select a student" %>
+      <%= f.collection_select :course, Course.all, :id, :name, prompt: "Select a course" %>
+      <div class="col-md-4 pull-right">
+        <div class="pull-right">
+          <%= link_to 'Back', classrooms_path, class: "btn btn-info" %>
+          <%= f.submit 'Save', class: "btn btn-info" %>
+        </div>
+      </div>
     </div>
 <% end %>
