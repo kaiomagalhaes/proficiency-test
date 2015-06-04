@@ -27,15 +27,15 @@ RSpec.describe Classroom, :type => :model do
 
   describe 'classroom is invalid' do
 
-    it "When have doesn't have a course and a student associated with him" do
+    it "When doesn't have a course and a student associated with him" do
       expect(build(:classroom)).to be_invalid
     end
 
-    it "When have doesn't have a course associated with him" do
+    it "When doesn't have a course associated with him" do
       expect(build(:classroom_without_course)).to be_invalid
     end
 
-    it "When have doesn't have a student associated with him" do
+    it "When doesn't have a student associated with him" do
       expect(build(:classroom_without_student)).to be_invalid
     end
 
