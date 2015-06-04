@@ -1,9 +1,4 @@
 class Classroom < ActiveRecord::Base
-
-  attr_accessor :student
-  attr_accessor :course
-  attr_accessor :course
-
   validates :student, presence: true
   validates :course, presence: true
 
