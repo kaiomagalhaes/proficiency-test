@@ -1,5 +1,5 @@
 development:
-  adapter: postgresql
+  adapter: sqlite3
   encoding: unicode
   database: proficiency-test_development
   pool: 5
@@ -7,6 +7,14 @@ development:
   password: "123"
 
 test:
+  adapter: postgresql
+  encoding: unicode
+  database: proficiency-test_test
+  pool: 5
+  username: root
+  password: "123"
+
+production:
   adapter: postgresql
   encoding: unicode
   database: proficiency-test_test
