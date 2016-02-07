@@ -9,7 +9,7 @@ RSpec.describe Classroom, :type => :model do
     end
 
     it 'When have a course and a student associated with him' do
-      expect(classroom).to be_invalid
+      expect(classroom).to be_valid
     end
 
     it 'When created the field entry_at is filled with Time.now.utc' do
