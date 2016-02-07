@@ -62,6 +62,8 @@ group :development, :test do
 
   gem 'seedbank'
   gem 'ffaker'
+  gem 'rubocop'
+  gem 'rubocop-checkstyle_formatter', require: false
 end
 
 group :test do
