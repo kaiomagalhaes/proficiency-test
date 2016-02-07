@@ -316,6 +316,7 @@ DEPENDENCIES
   seedbank
   shoulda-matchers
   simple_form
+  simplecov
   spring
   sqlite3
   therubyracer

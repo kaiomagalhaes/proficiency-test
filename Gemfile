@@ -65,6 +65,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'simplecov', :require => false
   gem 'capybara'
   gem 'launchy'
   gem 'database_cleaner'
