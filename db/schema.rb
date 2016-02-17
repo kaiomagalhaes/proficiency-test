@@ -11,12 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150604004407) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-  enable_extension "hstore"
-  enable_extension "uuid-ossp"
+ActiveRecord::Schema.define(version: 20160217223137) do
 
   create_table "classrooms", force: true do |t|
     t.integer  "student_id"
@@ -26,8 +21,8 @@ ActiveRecord::Schema.define(version: 20150604004407) do
     t.datetime "updated_at"
   end
 
-  add_index "classrooms", ["course_id"], name: "index_classrooms_on_course_id", using: :btree
-  add_index "classrooms", ["student_id"], name: "index_classrooms_on_student_id", using: :btree
+  add_index "classrooms", ["course_id"], name: "index_classrooms_on_course_id"
+  add_index "classrooms", ["student_id"], name: "index_classrooms_on_student_id"
 
   create_table "courses", force: true do |t|
     t.string   "name",        limit: 45
@@ -37,10 +32,22 @@ ActiveRecord::Schema.define(version: 20150604004407) do
     t.datetime "updated_at"
   end
 
+  create_table "grades", force: true do |t|
+    t.float    "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "students", force: true do |t|
     t.string   "name",            limit: 45
     t.string   "register_number", limit: 45
     t.integer  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subjects", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
