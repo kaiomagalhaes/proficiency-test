@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160217222755) do
 
-  create_table "classrooms", force: true do |t|
+  create_table "classrooms", force: :cascade do |t|
     t.integer  "student_id"
     t.integer  "course_id"
     t.datetime "entry_at"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20160217222755) do
   add_index "classrooms", ["course_id"], name: "index_classrooms_on_course_id"
   add_index "classrooms", ["student_id"], name: "index_classrooms_on_student_id"
 
-  create_table "courses", force: true do |t|
+  create_table "courses", force: :cascade do |t|
     t.string   "name",        limit: 45
     t.string   "description", limit: 45
     t.integer  "status"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20160217222755) do
     t.datetime "updated_at"
   end
 
-  create_table "grades", force: true do |t|
+  create_table "grades", force: :cascade do |t|
     t.float    "value"
     t.integer  "student_id"
     t.integer  "course_id"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20160217222755) do
   add_index "grades", ["course_id"], name: "index_grades_on_course_id"
   add_index "grades", ["student_id"], name: "index_grades_on_student_id"
 
-  create_table "students", force: true do |t|
+  create_table "students", force: :cascade do |t|
     t.string   "name",            limit: 45
     t.string   "register_number", limit: 45
     t.integer  "status"

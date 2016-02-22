@@ -1,11 +1,9 @@
 class ClassroomsController < ApplicationController
   before_action :set_classroom, only: [:show, :edit, :update, :destroy]
 
-
   def index
     @classrooms = Classroom.all
   end
-
 
   def show
   end
