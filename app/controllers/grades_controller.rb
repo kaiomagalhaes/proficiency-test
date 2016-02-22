@@ -69,6 +69,10 @@ class GradesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def grade_params
-      params[:grade]
+      valid_params = params.require(:grade).permit(:student, :course, :value)
+      student = Student.find_by_id(valid_params[:student])
+      course = Course.find_by_id(valid_params[:course])
+      value = valid_params[:value]
+      {student: student, course: course, value: value}
     end
 end
