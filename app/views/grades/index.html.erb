@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="col-md-1"></div>
+  <div id="table-responsive" class="col-md-10">
+    <h3>Listing classrooms</h3>
+    <table class="table table-striped table-bordered">
+      <thead>
+      <tr>
+        <th>Student</th>
+        <th>Course</th>
+        <th>Grade Value</th>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @grades.each do |grade| %>
+          <tr>
+            <td><%= grade.student.name %></td>
+            <td><%= grade.course.name %></td>
+            <td><%= grade.value %></td>
+            <td><%= link_to 'Show', grade %></td>
+            <td><%= link_to 'Destroy', grade, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'New', new_grade_path, class: "btn btn-info col-md-12 pull-right" %>
+  </div>
+  <div class="col-md-1"></div>
+  <br/>
+</div>
