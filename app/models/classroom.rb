@@ -11,7 +11,6 @@ class Classroom < ActiveRecord::Base
     old_classroom = Classroom.find_by(student: student, course: course)
     return unless old_classroom
     errors.add(:student, 'Student already on this course!')
-    end
   end
 
   before_save(on: :create) do
