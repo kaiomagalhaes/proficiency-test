@@ -1,3 +1,4 @@
+# Serve as helper for Internationalization and Localization the app
 module TranslationHelper
   # Translate model name
   #
@@ -6,9 +7,9 @@ module TranslationHelper
   #   <%= tm Post, 2 %>
   #
   def translate_model_name(model, count = 1)
-    model.model_name.human(:count => count)
+    model.model_name.human(count: count)
   end
-  alias_method :tm, :translate_model_name
+  alias :tm, :translate_model_name
 
   # Translate model name pluralized
   #
@@ -17,7 +18,7 @@ module TranslationHelper
   def translate_model_name_pluralized(model)
     translate_model_name(model, count = 2)
   end
-  alias_method :tmp, :translate_model_name_pluralized
+  alias :tmp, :translate_model_name_pluralized
 
   # Translate a model attribute from config/locales/models-*.yml for more details.
   #
@@ -26,7 +27,7 @@ module TranslationHelper
   #   <%= ta Post, :title, 2 %>
   #
   def translate_model_attribute(model, attribute, count = 1)
-    model.human_attribute_name(attribute, :count => count)
+    model.human_attribute_name(attribute, count: count)
   end
-  alias_method :ta, :translate_model_attribute
+  alias :ta, :translate_model_attribute
 end
