@@ -1,9 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Classroom, :type => :model do
-
+RSpec.describe Classroom, type: :model do
   describe 'classroom is valid' do
-
     let(:classroom) do
       build(:classroom_with_student_and_course)
     end
@@ -22,31 +20,27 @@ RSpec.describe Classroom, :type => :model do
       classroom.save!
       expect(classroom.entry_at.to_s).to eql(Time.now.utc.to_s)
     end
-
   end
 
   describe 'classroom is invalid' do
-
-    it "When doesn't have a course and a student associated with him" do
+    it 'When doesn\t have a course and a student associated with him' do
       expect(build(:classroom)).to be_invalid
     end
 
-    it "When doesn't have a course associated with him" do
+    it 'When doesn\'t have a course associated with him' do
       expect(build(:classroom_without_course)).to be_invalid
     end
 
-    it "When doesn't have a student associated with him" do
+    it 'When doesn\'t have a student associated with him' do
       expect(build(:classroom_without_student)).to be_invalid
     end
 
-    it "When the same student and course are already associated" do
+    it 'When the same student and course are already associated' do
       course = create(:course)
       student = create(:student)
       classroom = create(:classroom, course: course, student: student)
       new_classroom = Classroom.new student: student, course: course
       expect(new_classroom).to be_invalid
     end
-
   end
-
 end
