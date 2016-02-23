@@ -60,7 +60,7 @@ RSpec.describe ClassroomsController, type: :controller do
         expect(assigns(:classroom)).to be_a_new(Classroom)
       end
 
-      it 're-renders the 'new' template' do
+      it "re-renders the 'new' template" do
         post :create, { classroom: invalid_attributes }, valid_session
         expect(response).to render_template('new')
       end
