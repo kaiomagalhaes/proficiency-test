@@ -1,3 +1,4 @@
+# Serve as a controller for the grades model class
 class GradesController < ApplicationController
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
 
@@ -28,11 +29,15 @@ class GradesController < ApplicationController
 
     respond_to do |format|
       if @grade.save
-        format.html { redirect_to @grade, notice: 'Grade was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @grade }
+        format.html { redirect_to @grade,
+                                  notice: 'Grade was successfully created.' }
+        format.json { render action: 'show',
+                             status: :created,
+                             location: @grade }
       else
         format.html { render action: 'new' }
-        format.json { render json: @grade.errors, status: :unprocessable_entity }
+        format.json { render json: @grade.errors,
+                             status: :unprocessable_entity }
       end
     end
   end
@@ -42,11 +47,13 @@ class GradesController < ApplicationController
   def update
     respond_to do |format|
       if @grade.update(grade_params)
-        format.html { redirect_to @grade, notice: 'Grade was successfully updated.' }
+        format.html { redirect_to @grade,
+                                  notice: 'Grade was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @grade.errors, status: :unprocessable_entity }
+        format.json { render json: @grade.errors,
+                             status: :unprocessable_entity }
       end
     end
   end
@@ -55,6 +62,7 @@ class GradesController < ApplicationController
   # DELETE /grades/1.json
   def destroy
     @grade.destroy
+
     respond_to do |format|
       format.html { redirect_to grades_url }
       format.json { head :no_content }
@@ -62,17 +70,20 @@ class GradesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_grade
-      @grade = Grade.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def grade_params
-      valid_params = params.require(:grade).permit(:student, :course, :value)
-      student = Student.find_by_id(valid_params[:student])
-      course = Course.find_by_id(valid_params[:course])
-      value = valid_params[:value]
-      {student: student, course: course, value: value}
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_grade
+    @grade = Grade.find(params[:id])
+  end
+
+  # Never trust parameters from
+  # the scary internet
+  # only allow the white list through.
+  def grade_params
+    valid_params = params.require(:grade).permit(:student, :course, :value)
+    student = Student.find_by_id(valid_params[:student])
+    course = Course.find_by_id(valid_params[:course])
+    value = valid_params[:value]
+    {student: student, course: course, value: value}
+  end
 end
