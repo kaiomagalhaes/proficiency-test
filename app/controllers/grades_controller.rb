@@ -30,10 +30,10 @@ class GradesController < ApplicationController
     respond_to do |format|
       if @grade.save
         format.html { redirect_to @grade, notice: 'Grade was successfully created.' }
-        format.json { render action: 'show',  status: :created,  location: @grade }
+        format.json { render action: 'show', status: :created,  location: @grade }
       else
         format.html { render action: 'new' }
-        format.json { render json: @grade.errors,  status: :unprocessable_entity }
+        format.json { render json: @grade.errors, status: :unprocessable_entity }
       end
     end
   end
