@@ -1,3 +1,4 @@
+# Serve as a controller for the courses model class
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
@@ -17,7 +18,6 @@ class CoursesController < ApplicationController
 
   def create
     @course = Course.new(course_params)
-
     respond_to do |format|
       if @course.save
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
@@ -50,6 +50,7 @@ class CoursesController < ApplicationController
   end
 
   private
+
   def set_course
     @course = Course.find(params[:id])
   end

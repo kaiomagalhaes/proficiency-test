@@ -4,6 +4,5 @@ Rails.application.routes.draw do
   resources :classrooms
   resources :grades
 
-  root "classrooms#index"
-
+  root 'classrooms#index'
 end

@@ -28,7 +28,6 @@ gem 'haml'
 gem 'enumerate_it'
 gem 'sqlite3'
 
-
 # Bootstrap
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
@@ -67,7 +66,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'simplecov', :require => false
+  gem 'simplecov', require: false
   gem 'capybara'
   gem 'launchy'
   gem 'database_cleaner'

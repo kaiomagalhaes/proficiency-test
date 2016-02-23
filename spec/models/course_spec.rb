@@ -1,12 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe Course, :type => :model do
+RSpec.describe Course, type: :model do
   let(:course) do
     build(:course)
   end
 
   describe 'course is valid' do
-
     it 'When name and registration_number are defined' do
       expect(course).to be_valid
     end
@@ -21,11 +20,9 @@ RSpec.describe Course, :type => :model do
       course.status = 1
       expect(course).to be_valid
     end
-
   end
 
   describe 'course is invalid' do
-
     it 'When name is not defined' do
       expect(build(:course_without_name)).to be_invalid
     end
@@ -68,5 +65,4 @@ RSpec.describe Course, :type => :model do
       expect { course.destroy }.to change(Course, :count).by(0)
     end
   end
-
 end
