@@ -1,4 +1,4 @@
-# Serve as helper for flash messages (Messages on page that display a 
+# Serve as helper for flash messages (Messages on page that display a
 # state of an action)
 module FlashHelper
   def flash_messages
