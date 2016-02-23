@@ -48,7 +48,7 @@ RSpec.describe GradesController, :type => :controller do
       end
 
       it 'assigns a newly created grade as @grade' do
-        post :create, { grade => valid_attributes }, valid_session
+        post :create, { :grade => valid_attributes }, valid_session
         expect(assigns(:grade)).to be_a(Grade)
         expect(assigns(:grade)).to be_persisted
       end
