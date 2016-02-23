@@ -29,15 +29,11 @@ class GradesController < ApplicationController
 
     respond_to do |format|
       if @grade.save
-        format.html { redirect_to @grade,
-                                  notice: 'Grade was successfully created.' }
-        format.json { render action: 'show',
-                             status: :created,
-                             location: @grade }
+        format.html { redirect_to @grade, notice: 'Grade was successfully created.' }
+        format.json { render action: 'show',  status: :created,  location: @grade }
       else
         format.html { render action: 'new' }
-        format.json { render json: @grade.errors,
-                             status: :unprocessable_entity }
+        format.json { render json: @grade.errors,  status: :unprocessable_entity }
       end
     end
   end
@@ -47,13 +43,11 @@ class GradesController < ApplicationController
   def update
     respond_to do |format|
       if @grade.update(grade_params)
-        format.html { redirect_to @grade,
-                                  notice: 'Grade was successfully updated.' }
+        format.html { redirect_to @grade, notice: 'Grade was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @grade.errors,
-                             status: :unprocessable_entity }
+        format.json { render json: @grade.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -84,6 +78,6 @@ class GradesController < ApplicationController
     student = Student.find_by_id(valid_params[:student])
     course = Course.find_by_id(valid_params[:course])
     value = valid_params[:value]
-    {student: student, course: course, value: value}
+    { student: student, course: course, value: value }
   end
 end
