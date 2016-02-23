@@ -18,11 +18,14 @@ class ClassroomsController < ApplicationController
 
     respond_to do |format|
       if @classroom.save
-        format.html { redirect_to @classroom, notice: 'Classroom was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @classroom }
+        format.html { redirect_to @classroom,
+          notice: 'Classroom was successfully created.' }
+        format.json { render action: 'show', status: :created,
+          location: @classroom }
       else
         format.html { render action: 'new' }
-        format.json { render json: @classroom.errors, status: :unprocessable_entity }
+        format.json { render json: @classroom.errors,
+          status: :unprocessable_entity }
       end
     end
   end
@@ -36,7 +39,7 @@ class ClassroomsController < ApplicationController
   end
 
   private
-  
+
   def set_classroom
     @classroom = Classroom.find(params[:id])
   end
