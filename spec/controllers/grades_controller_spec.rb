@@ -1,14 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe GradesController, :type => :controller do
+  let(:valid_attributes) {  { student: create(:student), course: create(:course) }  }
 
-  let(:valid_attributes) {
-    {student: create(:student), course: create(:course)}
-  }
-
-  let(:invalid_attributes) {
-    {student: nil, course: nil}
-  }
+  let(:invalid_attributes) {  { student: nil, course: nil }  }
 
   let(:valid_session) { {} }
 
@@ -53,7 +48,7 @@ RSpec.describe GradesController, :type => :controller do
       end
 
       it 'assigns a newly created grade as @grade' do
-        post :create, { :grade => valid_attributes}, valid_session
+        post :create, { grade => valid_attributes }, valid_session
         expect(assigns(:grade)).to be_a(Grade)
         expect(assigns(:grade)).to be_persisted
       end
@@ -79,9 +74,7 @@ RSpec.describe GradesController, :type => :controller do
 
   describe 'PUT update' do
     describe 'with valid params' do
-      let(:new_attributes) {
-        skip('Add a hash of attributes valid for your model')
-      }
+      let(:new_attributes) { skip('Add a hash of attributes valid for your model') }
 
       it 'updates the requested grade' do
         grade = Grade.create! valid_attributes
