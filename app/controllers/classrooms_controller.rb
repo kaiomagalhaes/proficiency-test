@@ -1,3 +1,4 @@
+# Serve as a controller for the classroom model class
 class ClassroomsController < ApplicationController
   before_action :set_classroom, only: [:show, :edit, :update, :destroy]
 
@@ -35,6 +36,7 @@ class ClassroomsController < ApplicationController
   end
 
   private
+  
   def set_classroom
     @classroom = Classroom.find(params[:id])
   end
@@ -43,6 +45,6 @@ class ClassroomsController < ApplicationController
     valid_params = params.require(:classroom).permit(:student, :course)
     student = Student.find_by_id(valid_params[:student])
     course = Course.find_by_id(valid_params[:course])
-    {student: student, course: course}
+    { student: student, course: course }
   end
 end
