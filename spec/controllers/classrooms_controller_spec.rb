@@ -19,7 +19,7 @@ RSpec.describe ClassroomsController, type: :controller do
     end
   end
 
-  describe 	'GET show' do
+  describe 'GET show' do
     it 'assigns the requested classroom as @classroom' do
       classroom = Classroom.create! valid_attributes
       get :show, { id: classroom.to_param }, valid_session
