@@ -38,6 +38,7 @@ RSpec.describe Classroom, type: :model do
     it 'When the same student and course are already associated' do
       course = create(:course)
       student = create(:student)
+      classroom = create(:classroom, course: course, student: student)
       new_classroom = Classroom.new student: student, course: course
       expect(new_classroom).to be_invalid
     end
