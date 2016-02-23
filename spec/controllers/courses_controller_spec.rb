@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe CoursesController, type: :controller do
-
   let(:valid_attributes) {
     { name: 'Course name', description: 'Description for course' }
   }
@@ -78,7 +77,6 @@ RSpec.describe CoursesController, type: :controller do
 
   describe 'PUT update' do
     describe 'with valid params' do
-
       let(:new_name) {
         'Course test name'
       }
