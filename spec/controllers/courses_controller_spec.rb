@@ -68,7 +68,7 @@ RSpec.describe CoursesController, type: :controller do
         expect(assigns(:course)).to be_a_new(Course)
       end
 
-      it "re-renders the 'new' template" do
+      it 're-renders the \'new\' template' do
         post :create, { course: invalid_attributes }, valid_session
         expect(response).to render_template('new')
       end
@@ -118,7 +118,7 @@ RSpec.describe CoursesController, type: :controller do
         expect(assigns(:course)).to eq(course)
       end
 
-      it "re-renders the 'edit' template" do
+      it 're-renders the \'edit\' template' do
         course = Course.create! valid_attributes
         put :update,
             { id: course.to_param, course: invalid_attributes }, valid_session
