@@ -36,7 +36,7 @@ class ClassroomsController < ApplicationController
   end
 
   private
-  
+
   def set_classroom
     @classroom = Classroom.find(params[:id])
   end

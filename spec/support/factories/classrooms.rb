@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :classroom do
-
     factory :classroom_with_student_and_course do
       association :student, factory: :student
       association :course, factory: :course
@@ -13,6 +12,5 @@ FactoryGirl.define do
     factory :classroom_without_course do
       association :student, factory: :student
     end
-
   end
 end
