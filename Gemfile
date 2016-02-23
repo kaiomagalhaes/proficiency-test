@@ -28,7 +28,6 @@ gem 'haml'
 gem 'enumerate_it'
 gem 'sqlite3'
 
-
 # Bootstrap
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
