@@ -20,7 +20,8 @@ RSpec.describe CoursesController, type: :controller do
     end
   end
 
-  descri'assigns the requested course as @course' do
+  describe 'GET show' do
+    it 'assigns the requested course as @course' do
       course = Course.create! valid_attributes
       get :show, { id: course.to_param }, valid_session
       expect(assigns(:course)).to eq(course)
