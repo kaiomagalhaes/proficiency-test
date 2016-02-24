@@ -1,5 +1,6 @@
 Rails.application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
+  # Settings specified here will take precedence over those in
+  # config/application.rb.
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
@@ -40,7 +41,10 @@ Rails.application.configure do
     g.fixture_replacement :factory_girl
     g.factory_girl dir: 'spec/support/factories'
 
-    g.test_framework :rspec, :view_specs => false, :request_specs => false, :routing_specs => false
+    g.test_framework :rspec,
+                     view_specs: false,
+                     request_specs: false,
+                     routing_specs: false
 
     # Set scaffold controller
     g.scaffold_controller = :my_controller
