@@ -32,7 +32,6 @@ RSpec.describe GradesController, :type => :controller do
 
   describe 'GET edit' do
     it 'assigns the requested grade as @grade' do
-      skip
       grade = Grade.create! valid_attributes
       get :edit, { :id => grade.to_param }, valid_session
       expect(assigns(:grade)).to eq(grade)
@@ -74,13 +73,20 @@ RSpec.describe GradesController, :type => :controller do
 
   describe 'PUT update' do
     describe 'with valid params' do
-      let(:new_attributes) { skip('Add a hash of attributes valid for your model') }
+      let(:new_grade_value) {
+        8.0
+      }
+
+      let(:new_attributes) {
+        { value: new_grade_value }
+      }
 
       it 'updates the requested grade' do
         grade = Grade.create! valid_attributes
         put :update, { :id => grade.to_param, :grade => new_attributes }, valid_session
         grade.reload
-        skip('Add assertions for updated state')
+        response_grade = assigns(:grade)
+        expect(response_grade.value).to eql(new_grade_value)
       end
 
       it 'assigns the requested grade as @grade' do
@@ -98,14 +104,12 @@ RSpec.describe GradesController, :type => :controller do
 
     describe 'with invalid params' do
       it 'assigns the grade as @grade' do
-        skip
         grade = Grade.create! valid_attributes
         put :update, { :id => grade.to_param, :grade => invalid_attributes }, valid_session
         expect(assigns(:grade)).to eq(grade)
       end
 
       it 're-renders the "edit" template' do
-        skip
         grade = Grade.create! valid_attributes
         put :update, { :id => grade.to_param, :grade => invalid_attributes }, valid_session
         expect(response).to render_template('edit')
