@@ -30,12 +30,6 @@ Style/BlockDelimiters:
 Metrics/MethodLength:
   Max: 15
 
-Style/IndentArray:
-  Enabled: false
-
-Style/Lambda:
-  Enabled: false
-
 Style/TrailingCommaInLiteral:
   Enabled: true
   EnforcedStyleForMultiline: comma
