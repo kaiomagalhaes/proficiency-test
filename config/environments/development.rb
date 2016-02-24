@@ -62,7 +62,7 @@ Rails.application.configure do
       require 'pry'
       IRB = Pry
     rescue LoadError
-      puts 'Error setuping try'
+      Rails.logger.error 'Error setuping try'
     end
   end
 end
