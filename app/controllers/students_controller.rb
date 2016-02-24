@@ -1,3 +1,4 @@
+# Serve as a controller for the students model class
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
@@ -54,7 +55,6 @@ class StudentsController < ApplicationController
   def set_student
     @student = Student.find(params[:id])
   end
-
 
   def student_params
     params.require(:student).permit(:name, :register_number)
