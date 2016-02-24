@@ -16,7 +16,7 @@ module TranslationHelper
   #   <%= tm Post %>
   #
   def translate_model_name_pluralized(model)
-    translate_model_name(model, count = 2)
+    translate_model_name(model, 2)
   end
   alias tmp translate_model_name_pluralized
 
