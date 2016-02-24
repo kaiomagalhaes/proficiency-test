@@ -1,13 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe Student, :type => :model do
-
+RSpec.describe Student, type: :model do
   let(:student) do
     build(:student)
   end
 
   describe 'Student is valid' do
-
     it 'When name and registration_number are defined' do
       expect(student).to be_valid
     end
@@ -22,11 +20,9 @@ RSpec.describe Student, :type => :model do
       student.status = 1
       expect(student).to be_valid
     end
-
   end
 
   describe 'Student is invalid' do
-
     it 'When name is not defined' do
       expect(build(:student_without_name)).to be_invalid
     end
@@ -58,7 +54,6 @@ RSpec.describe Student, :type => :model do
       student.save
       expect(Student.new(student.attributes)).to be_invalid
     end
-
   end
 
   describe 'Is valid destroy student' do

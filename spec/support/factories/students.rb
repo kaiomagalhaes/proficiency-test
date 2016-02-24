@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :student do
-    name "User name test"
+    name 'User name test'
     register_number Random.new.rand *1000
     status 1
 
