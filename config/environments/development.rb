@@ -42,7 +42,7 @@ Rails.application.configure do
     g.factory_girl dir: 'spec/support/factories'
 
     g.test_framework :rspec,
-                     view_specs: false,
+                     view_specs:    false,
                      request_specs: false,
                      routing_specs: false
 
@@ -62,6 +62,7 @@ Rails.application.configure do
       require 'pry'
       IRB = Pry
     rescue LoadError
+      puts 'Error setuping try'
     end
   end
 end

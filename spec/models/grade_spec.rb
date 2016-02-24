@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Grade, :type => :model do
+RSpec.describe Grade, type: :model do
   describe 'grade is valid' do
     let(:grade) do
       build(:grade)

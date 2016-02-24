@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :course do
-    name "Course name test"
-    description "This is a legal course name"
+    name 'Course name test'
+    description 'This is a legal course name'
     status 1
 
     factory :course_without_name do
@@ -16,5 +16,4 @@ FactoryGirl.define do
       status nil
     end
   end
-
 end
