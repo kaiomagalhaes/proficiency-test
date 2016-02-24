@@ -49,12 +49,12 @@ RSpec.describe StudentsController, type: :controller do
     describe 'with valid params' do
       it 'creates a new Student' do
         expect {
-          post :create, { :student => valid_attributes }, valid_session
+          post :create, { student: valid_attributes }, valid_session
         }.to change(Student, :count).by(1)
       end
 
       it 'assigns a newly created student as @student' do
-        post :create, { student: valid_attributes}, valid_session
+        post :create, { student: valid_attributes }, valid_session
         expect(assigns(:student)).to be_a(Student)
         expect(assigns(:student)).to be_persisted
       end
